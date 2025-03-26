@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import DemoPage from "../packages/pageComponents/DemoPage.vue";
+import DemoPage from "../packages/DemoPage/DemoPage.vue";
 </script>
 
 <template>

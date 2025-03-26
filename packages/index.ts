@@ -1,12 +1,10 @@
-
-import DemoPage from "./pageComponents/index"
+import DemoPage from "./DemoPage/index"
 import type {App} from "vue";
+export { DemoPage };
 const comps = [DemoPage]
 const install = (Vue:App) => {
     comps.map((component: any) => {
-        Vue.component(component.__name as string, component);
+        Vue.component(component.name as string, component);
     })
 }
-
-
-export default install
+export default {install}

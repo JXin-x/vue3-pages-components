@@ -10,15 +10,17 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      "@/packages": join(__dirname, './packages/')
+    },
+    extensions: [".vue",'.js', '.json', '.ts', '.tsx']
   },
   build: {
     outDir: "lib", //输出文件名称
     lib: {
       entry: join(__dirname, './packages/index.ts'), //指定组件编译入口文件
-      name: 'vue3VideoH',
-      fileName: (format) => `index.${format}.js` // 打包后的文件名
+      name: 'vue3-pages-components',
+      fileName: (format) => `vue3-pages-components.${format}.js` // 打包后的文件名
     }, //库编译模式配置
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
